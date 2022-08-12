@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListNewsViewController" customModule="SCG_phlong" customModuleProvider="target">
             <connections>
+                <outlet property="activity" destination="Pbr-Ho-xcp" id="wZV-AC-zdC"/>
+                <outlet property="listNewsTbv" destination="09h-KD-NQm" id="bvS-os-bfw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,14 +19,35 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="09h-KD-NQm">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Pbr-Ho-xcp">
+                    <rect key="frame" x="182" y="428" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="D8F-yk-VDu"/>
+                        <constraint firstAttribute="width" secondItem="Pbr-Ho-xcp" secondAttribute="height" multiplier="1:1" id="R0g-aO-ybc"/>
+                    </constraints>
+                </activityIndicatorView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemGreenColor"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="09h-KD-NQm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Mlz-2Z-yAa"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="09h-KD-NQm" secondAttribute="trailing" id="Nsj-MI-KfO"/>
+                <constraint firstItem="Pbr-Ho-xcp" firstAttribute="centerX" secondItem="09h-KD-NQm" secondAttribute="centerX" id="eJH-a3-Myu"/>
+                <constraint firstItem="09h-KD-NQm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="t8i-te-iBT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="09h-KD-NQm" secondAttribute="bottom" id="th0-rA-1sS"/>
+                <constraint firstItem="Pbr-Ho-xcp" firstAttribute="centerY" secondItem="09h-KD-NQm" secondAttribute="centerY" id="uul-qR-fev"/>
+            </constraints>
             <point key="canvasLocation" x="133" y="100"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

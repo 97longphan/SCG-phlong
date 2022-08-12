@@ -14,8 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        let listNewsViewController = ListNewsViewController()
         let navigation = UINavigationController()
+        let listNavigator = ListNewsNavigator(navigation: navigation)
+        let listNewsViewModel = ListNewsViewModel(navigator: listNavigator)
+        let listNewsViewController = ListNewsViewController(viewModel: listNewsViewModel)
+        
         navigation.viewControllers = [listNewsViewController]
         window?.rootViewController = navigation
         window?.makeKeyAndVisible()

@@ -6,3 +6,14 @@
 //
 
 import Foundation
+protocol ListNewsNavigatorDefault {
+    func goToNewsDetail()
+}
+
+class ListNewsNavigator: BaseNavigator {}
+
+extension ListNewsNavigator: ListNewsNavigatorDefault {
+    func goToNewsDetail() {
+        
+    }
+}

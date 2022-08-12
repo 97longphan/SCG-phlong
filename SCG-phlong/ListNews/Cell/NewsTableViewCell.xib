@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="208" id="KGk-i7-Jjw" customClass="NewsTableViewCell" customModule="SCG_phlong" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="625" height="208"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="625" height="208"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QjO-Nc-byZ">
+                        <rect key="frame" x="510" y="54" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="Euy-NP-hut"/>
+                            <constraint firstAttribute="width" secondItem="QjO-Nc-byZ" secondAttribute="height" id="Xdg-X1-TZW"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="fmc-U0-YL0">
+                        <rect key="frame" x="15" y="15" width="480" height="178"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Best New Reminders Features in iOS 16" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blq-1E-YNM">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="21.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plus: A Google Chrome patch licks the DevilsTongue spyware, Android’s kernel gets a tune-up, and Microsoft fixes 84 flaws." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4JA-0y-ZuC">
+                                <rect key="frame" x="0.0" y="76" width="480" height="33"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022-07-19" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKw-T7-jZi">
+                                <rect key="frame" x="0.0" y="163.5" width="480" height="14.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="fmc-U0-YL0" secondAttribute="bottom" constant="15" id="5Mn-Sl-JES"/>
+                    <constraint firstAttribute="trailing" secondItem="QjO-Nc-byZ" secondAttribute="trailing" constant="15" id="7XB-hJ-vwi"/>
+                    <constraint firstItem="QjO-Nc-byZ" firstAttribute="leading" secondItem="fmc-U0-YL0" secondAttribute="trailing" constant="15" id="AQL-PC-f7N"/>
+                    <constraint firstItem="fmc-U0-YL0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="fgu-oq-2Rb"/>
+                    <constraint firstItem="fmc-U0-YL0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="lwl-iu-Oyx"/>
+                    <constraint firstItem="QjO-Nc-byZ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="uBh-LW-hJR"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="dateLabel" destination="NKw-T7-jZi" id="E76-8a-SML"/>
+                <outlet property="desLabel" destination="4JA-0y-ZuC" id="Hxq-gY-ryG"/>
+                <outlet property="thumbImv" destination="QjO-Nc-byZ" id="4BQ-RZ-F6Y"/>
+                <outlet property="titleLabel" destination="blq-1E-YNM" id="G67-Vz-Y31"/>
+            </connections>
+            <point key="canvasLocation" x="445.6521739130435" y="137.27678571428569"/>
+        </tableViewCell>
+    </objects>
+</document>
