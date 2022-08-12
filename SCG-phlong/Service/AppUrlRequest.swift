@@ -34,6 +34,7 @@ enum AppUrlRequest: URLRequestConvertible {
         case .getListNews(let page):
             return ["q": "apple",
                     "page": page,
+                    "pageSize": 10,
                     "apiKey": APIConstant.apiKey]
         }
     }

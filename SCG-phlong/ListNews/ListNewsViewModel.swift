@@ -12,7 +12,8 @@ class ListNewsViewModel: BaseViewModel {
     private var navigator: ListNewsNavigatorDefault
     private var useCase: ListNewsUseCaseDefault
     private let hideLoading = BehaviorRelay<Bool>(value: true)
-    
+    private var article = [Article]()
+    private var currentPage = 1
     init(navigator: ListNewsNavigatorDefault,
          useCase: ListNewsUseCaseDefault = ListNewsUseCase()) {
         self.navigator = navigator
@@ -22,26 +23,34 @@ class ListNewsViewModel: BaseViewModel {
 
 extension ListNewsViewModel: ViewModelType {
     struct Input {
-        let didLoadTrigger: Observable<Void>
+        let loadNews: Observable<Bool>
     }
     
     struct Output {
         let articles: Observable<[Article]>
         let hideLoading: Driver<Bool>
+        let error: Driver<Error>
     }
     
     func transform(input: Input) -> Output {
-        let articles = input.didLoadTrigger
-            .do(onNext: { [unowned self] in
-                hideLoading.accept(false)
-            }).flatMapLatest { [unowned self] in
-                return self.useCase.getListNews(1)
-            }.map {
-                $0.articles
-            } .do(onNext: { [unowned self] _ in
-                hideLoading.accept(true)
-            })
+        let loadNews = input.loadNews
+            .do(onNext: { [unowned self] _ in hideLoading.accept(false) })
+            .map { [unowned self] in self.currentPage = $0 ? currentPage + 1 : currentPage }
+            .flatMapLatest { [unowned self] in self.useCase.getListNews(currentPage) }
+            .materialize()
+            .share()
         
-        return Output(articles: articles, hideLoading: hideLoading.asDriver())
+        let articles = loadNews
+            .do(onNext: { [unowned self] in
+                hideLoading.accept(true)
+                self.article.append(contentsOf: $0.element?.articles ?? []) })
+            .map { [unowned self] _ in self.article }
+        
+        
+        let error = loadNews
+            .do(onNext: { [unowned self] _ in hideLoading.accept(true) })
+            .compactMap{ $0.error }
+        
+        return Output(articles: articles, hideLoading: hideLoading.asDriver(), error: error.asDriverOnErrorJustComplete())
     }
 }

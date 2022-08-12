@@ -31,9 +31,10 @@
 		4BFFE3D128A643D400C23D90 /* ListNewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFFE3D028A643D400C23D90 /* ListNewsModel.swift */; };
 		4BFFE3D528A6496700C23D90 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFFE3D328A6496700C23D90 /* NewsTableViewCell.swift */; };
 		4BFFE3D628A6496700C23D90 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BFFE3D428A6496700C23D90 /* NewsTableViewCell.xib */; };
-		4BFFE3D928A64CD400C23D90 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4BFFE3D828A64CD400C23D90 /* Kingfisher */; };
 		4BFFE3DB28A64E3300C23D90 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFFE3DA28A64E3300C23D90 /* ViewModelType.swift */; };
 		4BFFE3DD28A6538000C23D90 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFFE3DC28A6538000C23D90 /* BaseTableViewCell.swift */; };
+		B60210CB28A68731009B64A4 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = B60210CA28A68731009B64A4 /* SDWebImage */; };
+		B60210CE28A68A3F009B64A4 /* ESPullToRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = B60210CD28A68A3F009B64A4 /* ESPullToRefresh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,10 +70,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BFFE3D928A64CD400C23D90 /* Kingfisher in Frameworks */,
+				B60210CE28A68A3F009B64A4 /* ESPullToRefresh in Frameworks */,
 				4BFFE3CB28A63D7800C23D90 /* Alamofire in Frameworks */,
 				4BFFE3BC28A6345D00C23D90 /* RxSwift in Frameworks */,
 				4BFFE3BA28A6345D00C23D90 /* RxCocoa in Frameworks */,
+				B60210CB28A68731009B64A4 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +212,8 @@
 				4BFFE3B928A6345D00C23D90 /* RxCocoa */,
 				4BFFE3BB28A6345D00C23D90 /* RxSwift */,
 				4BFFE3CA28A63D7800C23D90 /* Alamofire */,
-				4BFFE3D828A64CD400C23D90 /* Kingfisher */,
+				B60210CA28A68731009B64A4 /* SDWebImage */,
+				B60210CD28A68A3F009B64A4 /* ESPullToRefresh */,
 			);
 			productName = "SCG-phlong";
 			productReference = 4BFFE38328A62CF700C23D90 /* SCG-phlong.app */;
@@ -243,7 +246,8 @@
 			packageReferences = (
 				4BFFE3B828A6345D00C23D90 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				4BFFE3C928A63D7800C23D90 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				4BFFE3D728A64CD400C23D90 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				B60210C928A68731009B64A4 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				B60210CC28A68A3F009B64A4 /* XCRemoteSwiftPackageReference "pull-to-refresh" */,
 			);
 			productRefGroup = 4BFFE38428A62CF700C23D90 /* Products */;
 			projectDirPath = "";
@@ -517,12 +521,20 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		4BFFE3D728A64CD400C23D90 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+		B60210C928A68731009B64A4 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
+				minimumVersion = 5.0.0;
+			};
+		};
+		B60210CC28A68A3F009B64A4 /* XCRemoteSwiftPackageReference "pull-to-refresh" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/eggswift/pull-to-refresh.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -543,10 +555,15 @@
 			package = 4BFFE3C928A63D7800C23D90 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		4BFFE3D828A64CD400C23D90 /* Kingfisher */ = {
+		B60210CA28A68731009B64A4 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4BFFE3D728A64CD400C23D90 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
+			package = B60210C928A68731009B64A4 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		B60210CD28A68A3F009B64A4 /* ESPullToRefresh */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B60210CC28A68A3F009B64A4 /* XCRemoteSwiftPackageReference "pull-to-refresh" */;
+			productName = ESPullToRefresh;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

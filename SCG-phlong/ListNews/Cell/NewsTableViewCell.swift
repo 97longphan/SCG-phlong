@@ -6,8 +6,7 @@
 //
 
 import UIKit
-import Kingfisher
-
+import SDWebImage
 class NewsTableViewCell: BaseTableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -16,6 +15,10 @@ class NewsTableViewCell: BaseTableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    override func prepareForReuse() {
+        thumbImv.image = nil
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -32,7 +35,7 @@ class NewsTableViewCell: BaseTableViewCell {
         titleLabel.text = model.title
         dateLabel.text = model.publishedAt
         if let urlToImage = model.urlToImage, let url = URL(string: urlToImage) {
-            thumbImv.kf.setImage(with: url)
+            thumbImv.sd_setImage(with: url)
         }
     }
     
