@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 enum AppUrlRequest: URLRequestConvertible {
-    case getListNews(page: Int)
+    case getListNews(page: Int, searchString: String?)
     
     private var baseUrl: String {
         return APIConstant.baseUrl
@@ -31,8 +31,8 @@ enum AppUrlRequest: URLRequestConvertible {
     // MARK: - Parameters
     var parameters: Parameters? {
         switch self {
-        case .getListNews(let page):
-            return ["q": "apple",
+        case .getListNews(let page, let searchString):
+            return ["q": "\(searchString ?? "iOS")",
                     "page": page,
                     "pageSize": 10,
                     "apiKey": APIConstant.apiKey]

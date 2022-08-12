@@ -6,3 +6,10 @@
 //
 
 import Foundation
+class NewsDetailViewModel {
+    var article: Article
+    
+    init(article: Article) {
+        self.article = article
+    }
+}

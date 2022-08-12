@@ -14,7 +14,8 @@ class ListNewsNavigator: BaseNavigator {}
 
 extension ListNewsNavigator: ListNewsNavigatorDefault {
     func goToNewsDetail(_ item: Article) {
-        let viewController = NewsDetailViewController()
+        let newsDetailViewModel = NewsDetailViewModel(article: item)
+        let viewController = NewsDetailViewController(viewModel: newsDetailViewModel)
         navigation.pushViewController(viewController, animated: true)
     }
 }

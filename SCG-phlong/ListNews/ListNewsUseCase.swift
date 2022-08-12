@@ -9,12 +9,12 @@ import RxSwift
 import Foundation
 
 protocol ListNewsUseCaseDefault {
-    func getListNews(_ page: Int) -> Observable<ListNewsModel>
+    func getListNews(page: Int, searchString: String?) -> Observable<ListNewsModel>
 }
 
 class ListNewsUseCase: ListNewsUseCaseDefault {
-    func getListNews(_ page: Int) -> Observable<ListNewsModel> {
-        let request = AppUrlRequest.getListNews(page: page).urlRequest
+    func getListNews(page: Int, searchString: String?) -> Observable<ListNewsModel> {
+        let request = AppUrlRequest.getListNews(page: page, searchString: searchString).urlRequest
         return URLSession.shared.rx.data(request: request!)
             .observe(on: MainScheduler.instance)
             .map { try JSONDecoder().decode(ListNewsModel.self, from: $0) }
