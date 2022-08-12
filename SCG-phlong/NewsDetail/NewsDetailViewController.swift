@@ -12,5 +12,9 @@ class NewsDetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func setupViews() {
+        
+    }
 
 }

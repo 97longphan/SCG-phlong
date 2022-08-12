@@ -7,13 +7,14 @@
 
 import Foundation
 protocol ListNewsNavigatorDefault {
-    func goToNewsDetail()
+    func goToNewsDetail(_ item: Article)
 }
 
 class ListNewsNavigator: BaseNavigator {}
 
 extension ListNewsNavigator: ListNewsNavigatorDefault {
-    func goToNewsDetail() {
-        
+    func goToNewsDetail(_ item: Article) {
+        let viewController = NewsDetailViewController()
+        navigation.pushViewController(viewController, animated: true)
     }
 }

@@ -24,6 +24,7 @@ class ListNewsViewModel: BaseViewModel {
 extension ListNewsViewModel: ViewModelType {
     struct Input {
         let loadNews: Observable<Bool>
+        let selectedCellTrigger: Driver<Article>
     }
     
     struct Output {
@@ -40,12 +41,16 @@ extension ListNewsViewModel: ViewModelType {
             .materialize()
             .share()
         
+        input.selectedCellTrigger
+            .drive(onNext: { [unowned self] in
+                navigator.goToNewsDetail($0)
+            }).disposed(by: disposeBag)
+        
         let articles = loadNews
             .do(onNext: { [unowned self] in
                 hideLoading.accept(true)
                 self.article.append(contentsOf: $0.element?.articles ?? []) })
             .map { [unowned self] _ in self.article }
-        
         
         let error = loadNews
             .do(onNext: { [unowned self] _ in hideLoading.accept(true) })
