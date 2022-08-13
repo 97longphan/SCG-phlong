@@ -71,9 +71,10 @@ extension ListNewsViewModel: ViewModelType {
             .disposed(by: disposeBag)
         
         let articles = news
+            .compactMap { $0.element }
             .do(onNext: { [unowned self] in
                 hideLoading.accept(true)
-                self.article.append(contentsOf: $0.element?.articles ?? []) })
+                self.article.append(contentsOf: $0.articles) })
             .map { [unowned self] _ in self.article }
         
         let error = news

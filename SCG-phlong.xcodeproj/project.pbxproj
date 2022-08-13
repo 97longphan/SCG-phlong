@@ -35,7 +35,20 @@
 		4BFFE3DD28A6538000C23D90 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFFE3DC28A6538000C23D90 /* BaseTableViewCell.swift */; };
 		B60210CB28A68731009B64A4 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = B60210CA28A68731009B64A4 /* SDWebImage */; };
 		B60210CE28A68A3F009B64A4 /* ESPullToRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = B60210CD28A68A3F009B64A4 /* ESPullToRefresh */; };
+		B6DC077B28A7EB0B005F9083 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = B6DC077A28A7EB0B005F9083 /* RxTest */; };
+		B6DC077E28A7EB62005F9083 /* ListNewsViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DC077D28A7EB62005F9083 /* ListNewsViewModelTest.swift */; };
+		B6DC078028A7EBA1005F9083 /* ListNewsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DC077F28A7EBA1005F9083 /* ListNewsMock.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B6DC077428A7EAF1005F9083 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4BFFE37B28A62CF700C23D90 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4BFFE38228A62CF700C23D90;
+			remoteInfo = "SCG-phlong";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4BFFE38328A62CF700C23D90 /* SCG-phlong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SCG-phlong.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +76,10 @@
 		4BFFE3D428A6496700C23D90 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 		4BFFE3DA28A64E3300C23D90 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		4BFFE3DC28A6538000C23D90 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		B6DC077028A7EAF1005F9083 /* SCG-phlongTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SCG-phlongTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6DC077C28A7EB61005F9083 /* SCG-phlongTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SCG-phlongTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		B6DC077D28A7EB62005F9083 /* ListNewsViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNewsViewModelTest.swift; sourceTree = "<group>"; };
+		B6DC077F28A7EBA1005F9083 /* ListNewsMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNewsMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +95,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B6DC076D28A7EAF1005F9083 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6DC077B28A7EB0B005F9083 /* RxTest in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -85,7 +110,9 @@
 			isa = PBXGroup;
 			children = (
 				4BFFE38528A62CF700C23D90 /* SCG-phlong */,
+				B6DC077128A7EAF1005F9083 /* SCG-phlongTests */,
 				4BFFE38428A62CF700C23D90 /* Products */,
+				B6DC077928A7EB0B005F9083 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				4BFFE38328A62CF700C23D90 /* SCG-phlong.app */,
+				B6DC077028A7EAF1005F9083 /* SCG-phlongTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -192,6 +220,23 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		B6DC077128A7EAF1005F9083 /* SCG-phlongTests */ = {
+			isa = PBXGroup;
+			children = (
+				B6DC077D28A7EB62005F9083 /* ListNewsViewModelTest.swift */,
+				B6DC077F28A7EBA1005F9083 /* ListNewsMock.swift */,
+				B6DC077C28A7EB61005F9083 /* SCG-phlongTests-Bridging-Header.h */,
+			);
+			path = "SCG-phlongTests";
+			sourceTree = "<group>";
+		};
+		B6DC077928A7EB0B005F9083 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -219,6 +264,27 @@
 			productReference = 4BFFE38328A62CF700C23D90 /* SCG-phlong.app */;
 			productType = "com.apple.product-type.application";
 		};
+		B6DC076F28A7EAF1005F9083 /* SCG-phlongTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6DC077628A7EAF1005F9083 /* Build configuration list for PBXNativeTarget "SCG-phlongTests" */;
+			buildPhases = (
+				B6DC076C28A7EAF1005F9083 /* Sources */,
+				B6DC076D28A7EAF1005F9083 /* Frameworks */,
+				B6DC076E28A7EAF1005F9083 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B6DC077528A7EAF1005F9083 /* PBXTargetDependency */,
+			);
+			name = "SCG-phlongTests";
+			packageProductDependencies = (
+				B6DC077A28A7EB0B005F9083 /* RxTest */,
+			);
+			productName = "SCG-phlongTests";
+			productReference = B6DC077028A7EAF1005F9083 /* SCG-phlongTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -231,6 +297,11 @@
 				TargetAttributes = {
 					4BFFE38228A62CF700C23D90 = {
 						CreatedOnToolsVersion = 13.3.1;
+					};
+					B6DC076F28A7EAF1005F9083 = {
+						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
+						TestTargetID = 4BFFE38228A62CF700C23D90;
 					};
 				};
 			};
@@ -248,12 +319,14 @@
 				4BFFE3C928A63D7800C23D90 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				B60210C928A68731009B64A4 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				B60210CC28A68A3F009B64A4 /* XCRemoteSwiftPackageReference "pull-to-refresh" */,
+				B6DC076928A7E9C0005F9083 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 4BFFE38428A62CF700C23D90 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				4BFFE38228A62CF700C23D90 /* SCG-phlong */,
+				B6DC076F28A7EAF1005F9083 /* SCG-phlongTests */,
 			);
 		};
 /* End PBXProject section */
@@ -268,6 +341,13 @@
 				4BFFE39328A62CF800C23D90 /* LaunchScreen.storyboard in Resources */,
 				4BFFE39028A62CF800C23D90 /* Assets.xcassets in Resources */,
 				4BFFE3D628A6496700C23D90 /* NewsTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6DC076E28A7EAF1005F9083 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,7 +379,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B6DC076C28A7EAF1005F9083 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6DC078028A7EBA1005F9083 /* ListNewsMock.swift in Sources */,
+				B6DC077E28A7EB62005F9083 /* ListNewsViewModelTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B6DC077528A7EAF1005F9083 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4BFFE38228A62CF700C23D90 /* SCG-phlong */;
+			targetProxy = B6DC077428A7EAF1005F9083 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4BFFE39128A62CF800C23D90 /* LaunchScreen.storyboard */ = {
@@ -434,6 +531,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_BITCODE = YES;
+				ENABLE_TESTING_SEARCH_PATHS = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SCG-phlong/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -462,6 +561,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_BITCODE = YES;
+				ENABLE_TESTING_SEARCH_PATHS = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SCG-phlong/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -483,6 +584,57 @@
 			};
 			name = Release;
 		};
+		B6DC077728A7EAF1005F9083 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "phlong.SCG-phlongTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "SCG-phlongTests/SCG-phlongTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SCG-phlong.app/SCG-phlong";
+			};
+			name = Debug;
+		};
+		B6DC077828A7EAF1005F9083 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "phlong.SCG-phlongTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "SCG-phlongTests/SCG-phlongTests-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SCG-phlong.app/SCG-phlong";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -500,6 +652,15 @@
 			buildConfigurations = (
 				4BFFE39828A62CF800C23D90 /* Debug */,
 				4BFFE39928A62CF800C23D90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B6DC077628A7EAF1005F9083 /* Build configuration list for PBXNativeTarget "SCG-phlongTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6DC077728A7EAF1005F9083 /* Debug */,
+				B6DC077828A7EAF1005F9083 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -539,6 +700,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		B6DC076928A7E9C0005F9083 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -566,6 +735,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B60210CC28A68A3F009B64A4 /* XCRemoteSwiftPackageReference "pull-to-refresh" */;
 			productName = ESPullToRefresh;
+		};
+		B6DC077A28A7EB0B005F9083 /* RxTest */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4BFFE3B828A6345D00C23D90 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxTest;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
