@@ -3,8 +3,11 @@ Rx + MVVM:
 - Load list news
 - Pull to refresh
 - Pagination
+- Unit test (ViewModel)
 
 3rd library with Package Manager:
 - RxSwift
+- RxCocoa
+- RxTest
 - SDWebImage
 - ESPullToRefresh
