@@ -1,3 +1,6 @@
+# Logic test 
+https://github.com/97longphan/SCG-phlong/tree/main/SCG-phlong-logic.playground
+
 # Project
 Rx + MVVM:
 - Load list news
