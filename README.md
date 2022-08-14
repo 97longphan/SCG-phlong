@@ -1,7 +1,7 @@
-# Logic test 
+# Logic Test 
 https://github.com/97longphan/SCG-phlong/tree/main/SCG-phlong-logic.playground
 
-# Project
+# Coding Test
 Rx + MVVM:
 - Load list news
 - Pull to refresh
