@@ -1,4 +1,4 @@
-# SCG-phlong
+# Project
 Rx + MVVM:
 - Load list news
 - Pull to refresh
