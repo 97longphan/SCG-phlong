@@ -2,7 +2,7 @@
 https://github.com/97longphan/SCG-phlong/tree/main/SCG-phlong-logic.playground
 
 # Coding Test
-Rx + MVVM:
+Reactive Programing + Swift + MVVM:
 - Load list news
 - Pull to refresh
 - Pagination
