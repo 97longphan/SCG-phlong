@@ -7,6 +7,7 @@
 
 @testable import SCG_phlong
 import RxSwift
+import Foundation
 
 class ListNewsNavigatorMock: ListNewsNavigatorDefault {
     var didCallGoToNewsDetail = false
@@ -22,11 +23,15 @@ class ListNewsUseCaseMock: ListNewsUseCaseDefault {
     var didCallGetListNews = false
     var isSearch = false
     var isPullRefresh = false
+    var isRequestError = false
     
     func getListNews(page: Int, searchString: String?) -> Observable<ListNewsModel> {
         didCallGetListNews = true
-        return Observable.just(createMockListNewsModel())
-        
+        if !isRequestError {
+            return Observable.just(createMockListNewsModel())
+        } else {
+            return Observable<ListNewsModel>.error((NSError(domain: "", code: 1, userInfo: [NSLocalizedDescriptionKey: "Error from network"])))
+        }
     }
     
     func createMockListNewsModel() -> ListNewsModel {

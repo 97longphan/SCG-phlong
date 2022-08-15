@@ -138,5 +138,13 @@ class ListNewsViewModelTest: XCTestCase {
         XCTAssertEqual(useCase.didCallGetListNews, true)
         XCTAssertEqual(articlesOutput.events.last?.value.element?.last?.author, "pullRFAuthor1")
     }
+    
+    func test_request_api_error() {
+        useCase.isRequestError = true
+        
+        startTrigger(didLoad: .next(0, ()))
+        XCTAssertEqual(useCase.didCallGetListNews, true)
+        XCTAssertEqual(errorOutput.events.first?.value.element?.localizedDescription, "Error from network")
+    }
 
 }
